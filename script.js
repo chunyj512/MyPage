@@ -66,17 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
-    // Skills-Icon-Bounce-Animation
-    const skillIcons = document.querySelectorAll('.skill-icon');
-    skillIcons.forEach(icon => {
-        icon.addEventListener('mouseenter', () => {
-            icon.classList.add('bounce');
-        });
-        icon.addEventListener('animationend', () => {
-            icon.classList.remove('bounce');
-        });
-    });
-
     // Experience-Timeline-Animation
     const timelineItems = document.querySelectorAll('.timeline-item');
     const timelineObserver = new IntersectionObserver((entries, observer) => {

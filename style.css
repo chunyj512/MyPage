@@ -256,34 +256,52 @@ body {
 /* --- Skills 섹션 --- */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 20px;
-    text-align: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
-.skill-item {
-    padding: 20px;
+.skill-card {
+    background-color: transparent;
+    height: 260px;
+    perspective: 1000px;
 }
-.skill-item span {
+.skill-card .skill-icon {
     font-size: 3rem;
-    display: inline-block;
+    margin-bottom: 15px;
 }
-.skill-item p {
-    margin-top: 10px;
-    font-weight: 500;
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
 }
-.skill-icon.bounce {
-    animation: bounce 0.6s ease;
+.skill-card:hover .card-inner {
+    transform: rotateY(180deg);
 }
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-30px);
-    }
-    60% {
-        transform: translateY(-15px);
-    }
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: var(--card-bg-color);
+    box-sizing: border-box;
+}
+.front {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.back {
+    transform: rotateY(180deg);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: left;
 }
 
 /* --- Experience (타임라인) --- */
