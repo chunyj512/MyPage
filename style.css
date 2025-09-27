@@ -224,7 +224,7 @@ body {
     gap: 30px;
 }
 
-.project-card img {
+.project-card img, .card img {
     width: 100%;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -238,6 +238,12 @@ body {
 .project-card p {
     color: var(--subtext-color);
     margin-bottom: 20px;
+}
+
+.project-link-wrapper {
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .tags {
@@ -461,6 +467,66 @@ body {
     background-color: #f1f1f1;
     color: var(--subtext-color);
     font-size: 0.9rem;
+}
+
+/* --- 상세 페이지 보조 스타일 --- */
+.sub-hero {
+    height: 60vh;
+    min-height: 400px;
+}
+.divider {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 25px 0;
+}
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+.feature-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+.feature-list li:last-child {
+    border-bottom: none;
+}
+.caption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--subtext-color);
+    margin-top: 10px;
+}
+.progress-item {
+    margin-bottom: 20px;
+}
+.progress-item:last-child {
+    margin-bottom: 0;
+}
+.progress-item p {
+    margin: 0 0 8px 0;
+}
+.progress-wrap {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.progress {
+    flex-grow: 1;
+    width: 100%;
+    height: 10px;
+    background: #eee;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background: var(--point-color);
+    transition: width .8s ease;
+}
+.progress-wrap span {
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 /* --- 반응형 디자인 --- */

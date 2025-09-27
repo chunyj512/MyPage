@@ -96,6 +96,23 @@ document.addEventListener('DOMContentLoaded', () => {
         otherCardObserver.observe(card);
     });
 
+    // Progress Bar Animation
+    const progressBars = document.querySelectorAll('.progress-bar');
+    const progressObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const bar = entry.target;
+                const rate = bar.getAttribute('data-rate');
+                bar.style.width = (rate * 100) + '%';
+                observer.unobserve(bar);
+            }
+        });
+    }, { threshold: 0.8 });
+
+    progressBars.forEach(bar => {
+        progressObserver.observe(bar);
+    });
+
     // Contact-Social-Icon-Color-Fill
     const socialIcons = document.querySelectorAll('.social-icon i');
     socialIcons.forEach(icon => {
