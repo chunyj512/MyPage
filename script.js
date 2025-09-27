@@ -15,8 +15,27 @@ document.addEventListener('DOMContentLoaded', () => {
         typing();
     }
 
-    // Scroll-Reveal-Animation
-    const revealElements = document.querySelectorAll('.reveal');
+    // About Me Sequential Animation
+    const aboutContent = document.querySelector('.about-content');
+    if (aboutContent) {
+        const aboutSentences = aboutContent.querySelectorAll('.reveal');
+        const aboutObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    aboutSentences.forEach((sentence, index) => {
+                        setTimeout(() => {
+                            sentence.classList.add('visible');
+                        }, index * 500); // 0.5초 간격
+                    });
+                    observer.unobserve(entry.target); // 한번만 애니메이션 실행
+                }
+            });
+        }, { threshold: 0.4 });
+        aboutObserver.observe(aboutContent);
+    }
+
+    // General Scroll-Reveal-Animation for other sections
+    const revealElements = document.querySelectorAll('.section.reveal');
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -71,6 +90,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     timelineItems.forEach(item => {
         timelineObserver.observe(item);
+    });
+
+    // Other Experience Card Animation
+    const otherCards = document.querySelectorAll('.other-card');
+    const otherCardObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    otherCards.forEach(card => {
+        otherCardObserver.observe(card);
     });
 
     // Contact-Social-Icon-Color-Fill

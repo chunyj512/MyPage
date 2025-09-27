@@ -184,6 +184,39 @@ body {
     color: var(--subtext-color);
 }
 
+.about-content .reveal {
+    transition-property: opacity, transform;
+    transition-duration: 1.2s;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.about-content .reveal.slide-up {
+    transform: translateY(40px);
+}
+
+.about-content .reveal.fade-in {
+    /* transform 없음 */
+}
+
+.about-content .reveal.slide-left {
+    transform: translateX(-40px);
+}
+
+.about-content .reveal.zoom-in {
+    transform: scale(0.9);
+}
+
+.about-content .reveal.visible {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+}
+
+.highlight {
+    color: var(--point-color);
+    font-weight: 700;
+}
+
+
 /* --- Projects 섹션 --- */
 .projects-grid {
     display: grid;
@@ -327,6 +360,32 @@ body {
     color: var(--subtext-color);
 }
 
+/* --- Other Experience 섹션 --- */
+.other-experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.other-card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.other-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.other-card h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+.other-card p {
+    color: var(--subtext-color);
+}
+
+
 /* --- Contact 섹션 --- */
 .contact-card {
     text-align: center;
@@ -406,5 +465,8 @@ body {
     .timeline-item::before {
         left: 12.5px !important;
         right: auto !important;
+    }
+    .other-experience-grid {
+        grid-template-columns: 1fr;
     }
 }
