@@ -1,126 +1,65 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Hero-Typing-Effect
-    const typingText = document.querySelector('.typing');
-    if (typingText) {
-        const text = typingText.innerText;
-        typingText.innerText = '';
-        let i = 0;
-        function typing() {
-            if (i < text.length) {
-                typingText.innerText += text.charAt(i);
-                i++;
-                setTimeout(typing, 100);
-            }
-        }
-        typing();
+
+    // ── 햄버거 메뉴 ──────────────────────────────
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks  = document.querySelector('.nav-links');
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navLinks.classList.toggle('open');
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navLinks.classList.remove('open');
+            });
+        });
     }
 
-    // About Me Sequential Animation
-    const aboutContent = document.querySelector('.about-content');
-    if (aboutContent) {
-        const aboutSentences = aboutContent.querySelectorAll('.reveal');
-        const aboutObserver = new IntersectionObserver((entries, observer) => {
+    // ── 스크롤 reveal ─────────────────────────────
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08 });
+    revealEls.forEach(el => revealObs.observe(el));
+
+    // ── 프로젝트 커서 따라다니는 이미지 ───────────
+    const hoverImg = document.querySelector('.project-hover-img');
+    if (hoverImg) {
+        document.addEventListener('mousemove', (e) => {
+            hoverImg.style.left = e.clientX + 'px';
+            hoverImg.style.top  = e.clientY + 'px';
+        });
+        document.querySelectorAll('.project-row').forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                const src = row.dataset.img;
+                if (!src) return;
+                hoverImg.src = src;
+                hoverImg.style.opacity = '1';
+            });
+            row.addEventListener('mouseleave', () => {
+                hoverImg.style.opacity = '0';
+            });
+        });
+    }
+
+    // ── 프로그레스 바 (서브페이지용) ─────────────
+    const bars = document.querySelectorAll('.progress-bar');
+    if (bars.length) {
+        const progressObs = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    aboutSentences.forEach((sentence, index) => {
-                        setTimeout(() => {
-                            sentence.classList.add('visible');
-                        }, index * 500); // 0.5초 간격
-                    });
-                    observer.unobserve(entry.target); // 한번만 애니메이션 실행
+                    entry.target.style.width = (entry.target.dataset.rate * 100) + '%';
+                    obs.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.4 });
-        aboutObserver.observe(aboutContent);
+        }, { threshold: 0.8 });
+        bars.forEach(bar => progressObs.observe(bar));
     }
 
-    // General Scroll-Reveal-Animation for other sections
-    const revealElements = document.querySelectorAll('.section.reveal');
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    revealElements.forEach(el => {
-        revealObserver.observe(el);
-    });
-
-    // Project-Card-3D-Tilt-Effect
-    const tiltElements = document.querySelectorAll('.project-card');
-    if (tiltElements.length > 0) {
-        const script = document.createElement('script');
-        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js';
-        document.head.appendChild(script);
-
-        script.onload = () => {
-            VanillaTilt.init(tiltElements, {
-                max: 25,
-                speed: 400,
-                glare: true,
-                'max-glare': 0.5,
-            });
-        };
-    }
-
-    // Experience-Timeline-Animation
-    const timelineItems = document.querySelectorAll('.timeline-item');
-    const timelineObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    timelineItems.forEach(item => {
-        timelineObserver.observe(item);
-    });
-
-    // Other Experience Card Animation
-    const otherCards = document.querySelectorAll('.other-card');
-    const otherCardObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    otherCards.forEach(card => {
-        otherCardObserver.observe(card);
-    });
-
-    // Progress Bar Animation
-    const progressBars = document.querySelectorAll('.progress-bar');
-    const progressObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const bar = entry.target;
-                const rate = bar.getAttribute('data-rate');
-                bar.style.width = (rate * 100) + '%';
-                observer.unobserve(bar);
-            }
-        });
-    }, { threshold: 0.8 });
-
-    progressBars.forEach(bar => {
-        progressObserver.observe(bar);
-    });
-
-    // Contact-Social-Icon-Color-Fill
-    const socialIcons = document.querySelectorAll('.social-icon i');
-    socialIcons.forEach(icon => {
-        icon.addEventListener('mouseenter', () => {
-            icon.style.color = 'var(--point-color)';
-        });
-        icon.addEventListener('mouseleave', () => {
-            icon.style.color = '';
-        });
-    });
 });

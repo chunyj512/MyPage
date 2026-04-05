@@ -3,252 +3,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>전유정 | 서비스 기획자 포트폴리오</title>
+    <title>전유정 — 서비스 기획자</title>
+    <meta name="description" content="문제를 정의하고 구조화된 해결책을 설계하는 서비스 기획자 전유정의 포트폴리오입니다.">
+    <meta property="og:title" content="전유정 — 서비스 기획자">
+    <meta property="og:description" content="문제를 정의하고 구조화된 해결책을 설계하는 서비스 기획자 전유정의 포트폴리오입니다.">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <!-- 네비게이션 바 -->
+    <!-- 네비게이션 -->
     <nav class="navbar">
         <div class="container">
-            <a href="#hero" class="logo">Yujeong</a>
+            <a href="#hero" class="logo">YJ</a>
+            <button class="hamburger" aria-label="메뉴 열기">
+                <span></span><span></span><span></span>
+            </button>
             <ul class="nav-links">
-                <li><a href="#about">About Me</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="edo.html">E-do</a></li>
-                <li><a href="#other-experience">Other</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <main>
-        <!-- Hero 섹션 -->
-        <section id="hero">
-            <div class="hero-content">
-                <h1 class="animate-item">전유정</h1>
-                <p class="typing">사람들의 문제에 공감하고, 기술로 실질적인 해결책을 찾는 서비스 기획자</p>
-                <a href="#projects" class="cta-button animate-item">내 프로젝트 보기</a>
-            </div>
-        </section>
 
-        <!-- About Me 섹션 -->
-        <section id="about" class="section">
+        <!-- Hero -->
+        <section id="hero">
             <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-content card">
-                    <p class="reveal slide-up">안녕하세요! 저는 충남대학교 컴퓨터융합학부에 재학 중인 서비스 기획자 전유정입니다.</p>
-                    <p class="reveal fade-in">저는 '<span class="highlight">사람들의 문제 해결</span>'을 중심 가치로 두고, AI와 데이터는 이를 실현하기 위한 수단으로 활용합니다.</p>
-                    <p class="reveal slide-left">해커톤, 창업동아리, 연구 프로젝트에 참여하며 <br><strong>아이디어 발굴 → 기획 → 프로토타입 제작 → 배포</strong>의 전 과정을 경험했습니다.<br></p>
-                    <p class="reveal zoom-in">사용자 경험과 사회문제 해결을 연결하는 기획자로 성장하기 위해 끊임없이 도전하고 있습니다. ✨</p>
+                <div class="hero-top">
+                    <div class="hero-tags">
+                        <span>서비스 기획자</span>
+                        <span>충남대학교</span>
+                        <span>GCS 8기</span>
+                    </div>
+                    <span class="hero-year">2026</span>
+                </div>
+                <h1 class="hero-name animate-item">전유정</h1>
+                <div class="hero-bottom">
+                    <p class="hero-sub animate-item">문제가 맞는지를 먼저 따지는 기획자.<br>빠르게 완성하는 것보다 출발점이 옳은지를 묻습니다.</p>
+                    <a href="#projects" class="hero-cta animate-item">Projects ↓</a>
                 </div>
             </div>
         </section>
 
-        <!-- Projects 섹션 -->
+        <!-- Projects -->
         <section id="projects" class="section reveal">
             <div class="container">
-                <h2 class="section-title">Projects</h2>
-                <div class="projects-grid">
-                    <!-- 같이 키우기 -->
-                    <div class="card project-card">
-                        <img src="images/togethercare.png" alt="같이 키우기">
-                        <h3>같이 키우기</h3>
-                        <p>맞벌이 부모의 육아·가사 분담 갈등을 해결하기 위한 AI 기반 앱.  
-                        자동 역할 분담, 상담형 챗봇, 감정 리포트 시각화를 통해 초보 부모의 인지적 부담을 줄였습니다.</p>
-                        <div class="tags">
-                            <span>서비스 기획</span>
-                            <span>UX 설계</span>
-                            <span>AI 활용</span>
+                <div class="section-header">
+                    <span class="section-label">Projects</span>
+                    <span class="section-count">03</span>
+                </div>
+
+                <!-- 커서 따라다니는 프리뷰 이미지 -->
+                <img class="project-hover-img" src="" alt="">
+
+                <div class="projects-list">
+
+                    <div class="project-row reveal" data-img="images/togethercare.png">
+                        <span class="proj-num">01</span>
+                        <div class="proj-body">
+                            <img class="proj-mobile-img" src="images/togethercare.png" alt="같이 키우기">
+                            <h3 class="proj-title">같이 키우기</h3>
+                            <p class="proj-desc">초보 부모의 육아 부담을 줄이기 위한 AI 앱. 처음 설계한 루틴 자동화 기능이 오히려 죄책감을 유발한다는 것을 인터뷰로 발견했고, 기능을 고치는 대신 문제 정의 단계로 돌아가 전면 피벗했습니다. 150팀 중 결선 3팀 선정.</p>
+                            <div class="proj-tags">
+                                <span>서비스 기획</span>
+                                <span>사용자 인터뷰</span>
+                                <span>PM</span>
+                                <span>AI</span>
+                            </div>
+                        </div>
+                        <div class="proj-right">
+                            <span class="proj-year">2025</span>
+                            <span class="proj-arrow">↗</span>
                         </div>
                     </div>
-                    <!-- FakeFilter -->
-                    <div class="card project-card">
-                        <img src="images/fakefilter.png" alt="FakeFilter">
-                        <h3>FakeFilter</h3>
-                        <p>정보 편향 탐지 인터랙티브 게임.  
-                        기사·대화·검색 과정을 통해 사용자가 편향을 탐지하고 논리적 설득을 연습할 수 있도록 기획했습니다.</p>
-                        <div class="tags">
-                            <span>게임 기획</span>
-                            <span>정보 리터러시</span>
-                            <span>인터랙션 설계</span>
+
+                    <div class="project-row reveal" data-img="images/fakefilter.png">
+                        <span class="proj-num">02</span>
+                        <div class="proj-body">
+                            <img class="proj-mobile-img" src="images/fakefilter.png" alt="FakeFilter">
+                            <h3 class="proj-title">FakeFilter</h3>
+                            <p class="proj-desc">뉴스 속 편향을 직접 탐지하는 인터랙티브 게임. 기사 읽기, 댓글 분석, 검색 결과 해석의 흐름 안에서 논리적 설득을 연습하도록 설계했습니다. 충남대 생성형 AI 챌린지 금상.</p>
+                            <div class="proj-tags">
+                                <span>게임 기획</span>
+                                <span>시나리오 설계</span>
+                                <span>인터랙션</span>
+                                <span>생성형 AI</span>
+                            </div>
+                        </div>
+                        <div class="proj-right">
+                            <span class="proj-year">2025</span>
+                            <span class="proj-arrow">↗</span>
                         </div>
                     </div>
-                    <!-- 이도 -->
-                    <a href="edo.html" class="project-link-wrapper">
-                        <div class="card project-card">
-                            <img src="images/edo.png" alt="이도">
-                            <h3>이도 (E-do)</h3>
-                            <p>경계선 지능 아동을 위한 학습 지원 도구.  
-                            활동 기반 학습 흐름과 AI 챗봇을 결합하여 자기주도 학습을 돕는 구조를 설계했습니다.</p>
-                            <div class="tags">
+
+                    <div class="project-row reveal" data-img="images/edo.png">
+                        <span class="proj-num">03</span>
+                        <div class="proj-body">
+                            <img class="proj-mobile-img" src="images/edo.png" alt="E-do">
+                            <h3 class="proj-title">E-do</h3>
+                            <p class="proj-desc">처음엔 경계선 지능 대학생을 대상으로 기획했다가, 전문가 인터뷰에서 개입 시점이 틀렸다는 것을 알게 됐습니다. 타겟을 학령기 아동으로 전환하고 처음부터 다시 설계했습니다. K-12 해커톤 130팀 중 결선 진출.</p>
+                            <div class="proj-tags">
                                 <span>교육 기획</span>
                                 <span>UX/UI</span>
-                                <span>학습 지원</span>
+                                <span>인터뷰 기반 피벗</span>
                             </div>
                         </div>
-                    </a>
+                        <div class="proj-right">
+                            <span class="proj-year">2024</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- Skills 섹션 -->
-        <section id="skills" class="section reveal">
+        <!-- About -->
+        <section id="about" class="section reveal">
             <div class="container">
-                <h2 class="section-title">Skills</h2>
-                <div class="skills-grid">
-                    <!-- Card 1 -->
-                    <div class="skill-card">
-                        <div class="card-inner">
-                            <div class="front">
-                                <span class="skill-icon">📊</span>
-                                <p>서비스 기획 & PM</p>
-                            </div>
-                            <div class="back">
-                                <p>K-13·K-12 해커톤 등에서 팀장을 맡아 아이디어 발굴부터 린캔버스 작성, KPI 설계, 사용자 여정 맵 제작까지 전 과정을 주도했습니다.<br>기획에서 실행까지 PM 역할을 수행하며 프로젝트를 완수한 경험이 있습니다.</p>
-                            </div>
-                        </div>
+                <div class="section-header">
+                    <span class="section-label">About</span>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>1학년 때 처음 나간 해커톤에서 "어떤 문제를 풀 것인가"를 정하는 것이 이렇게 어렵다는 걸 처음 알았습니다. 그때부터 기획이 재미있어졌고, 이후 프로젝트마다 자연스럽게 기획을 맡게 됐습니다.</p>
+                        <p>같이키우기를 만들 때, 처음에 설계한 루틴 자동화 기능이 오히려 부모들에게 죄책감이 된다는 걸 인터뷰로 발견했습니다. 기능을 고치는 대신 문제 정의 단계로 돌아갔고, 처음에 만든 기능은 거의 남지 않았습니다.</p>
+                        <p>빠르게 완성하는 것보다, 출발점이 맞는지를 먼저 따지는 기획자가 되고 싶습니다.</p>
                     </div>
-                    <!-- Card 2 -->
-                    <div class="skill-card">
-                        <div class="card-inner">
-                            <div class="front">
-                                <span class="skill-icon">🎨</span>
-                                <p>UX/UI 설계</p>
-                            </div>
-                            <div class="back">
-                                <p>‘같이 키우기’ 앱, ‘이도(E-Do)’ 서비스, AI 사례관리 시스템 등에서 Figma 기반 프로토타입과 사용자 플로우를 설계했습니다.<br>프로젝트별 특성에 맞는 UI를 구현하며 사용자 경험 중심의 디자인을 추구했습니다.</p>
-                            </div>
+                    <div class="about-meta">
+                        <div class="meta-group">
+                            <h4>도구</h4>
+                            <ul>
+                                <li>Figma</li>
+                                <li>Notion</li>
+                                <li>Miro</li>
+                                <li>ChatGPT / Claude</li>
+                            </ul>
                         </div>
-                    </div>
-                    <!-- Card 3 -->
-                    <div class="skill-card">
-                        <div class="card-inner">
-                            <div class="front">
-                                <span class="skill-icon">🤝</span>
-                                <p>팀 리딩 & 협업</p>
-                            </div>
-                            <div class="back">
-                                <p>대전 AI·ICT 서포터즈, K-13 해커톤, 생성형 AI 챌린지 등 다양한 활동에서 팀장으로 팀을 이끌고 조율했습니다. <br>멘토링·발표·기획 조정 경험을 통해 여러 전공 배경의 팀원들과 효과적으로 협업했습니다.</p>
-                            </div>
+                        <div class="meta-group">
+                            <h4>역량</h4>
+                            <ul>
+                                <li>서비스 기획</li>
+                                <li>사용자 인터뷰</li>
+                                <li>UX/UI 설계</li>
+                                <li>팀 리딩</li>
+                            </ul>
                         </div>
-                    </div>
-                    <!-- Card 4 -->
-                    <div class="skill-card">
-                        <div class="card-inner">
-                            <div class="front">
-                                <span class="skill-icon">🗣️</span>
-                                <p>사용자 중심 스토리텔링</p>
-                            </div>
-                            <div class="back">
-                                <p>'같이 키우기’ 앱과 ‘FakeFilter’ 게임을 기획하며, 사용자의 문제와 감정을 공감적으로 해석해 기획서와 보고서에 담았습니다.<br>데이터와 감정을 함께 엮어, 팀과 사용자 모두가 공감할 수 있는 스토리라인을 만들어냈습니다.</p>
-                            </div>
+                        <div class="meta-group">
+                            <h4>관심 분야</h4>
+                            <ul>
+                                <li>AI 서비스</li>
+                                <li>교육 테크</li>
+                                <li>소셜 임팩트</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Experience 섹션 -->
+        <!-- Experience + Awards -->
         <section id="experience" class="section reveal">
             <div class="container">
-                <h2 class="section-title">Experience</h2>
-                <div class="timeline">
-                    <div class="timeline-item card">
-                        <div class="timeline-date">2025 – 현재</div>
-                        <h3 class="timeline-title">같이키우기 프로젝트</h3>
-                        <p class="timeline-subtitle">팀장 / 서비스 기획자 / PM</p>
-                        <p class="timeline-text">AI 기반 <strong>육아 보조 앱 “같이 키우기” 기획 총괄</strong><br>프로토타입 제작, 사용자 리서치, <br>플레이스토어 런칭 진행<br>150팀 중 3팀안에 선정돼 결선 준비중</p>
+                <div class="section-header">
+                    <span class="section-label">Experience &amp; Awards</span>
+                </div>
+                <div class="exp-awards-grid">
+
+                    <!-- 경험 -->
+                    <div class="exp-col">
+                        <div class="exp-list">
+
+                            <div class="exp-item">
+                                <span class="exp-date">2026.03—</span>
+                                <div>
+                                    <div class="exp-title">GCS 8기</div>
+                                    <div class="exp-sub">가천대학교 가천코코네스쿨 · 창업 역량 강화</div>
+                                </div>
+                            </div>
+
+                            <div class="exp-item">
+                                <span class="exp-date">2025—</span>
+                                <div>
+                                    <div class="exp-title">같이키우기 · 팀장 / PM</div>
+                                    <div class="exp-sub">AI 육아 보조 앱 기획 총괄 · 플레이스토어 런칭</div>
+                                </div>
+                            </div>
+
+                            <div class="exp-item">
+                                <span class="exp-date">2025.03—<br>2026.02</span>
+                                <div>
+                                    <div class="exp-title">멋쟁이사자처럼 BE</div>
+                                    <div class="exp-sub">충남대학교 · 백엔드 개발 학습</div>
+                                </div>
+                            </div>
+
+                            <div class="exp-item">
+                                <span class="exp-date">2025</span>
+                                <div>
+                                    <div class="exp-title">FakeFilter · 팀장 / 기획</div>
+                                    <div class="exp-sub">AI 편향 감지 게임 · 금상 수상</div>
+                                </div>
+                            </div>
+
+                            <div class="exp-item">
+                                <span class="exp-date">2024.03—</span>
+                                <div>
+                                    <div class="exp-title">Motion 기획이사</div>
+                                    <div class="exp-sub">충남대학교 스타트업 동아리</div>
+                                </div>
+                            </div>
+
+                            <div class="exp-item">
+                                <span class="exp-date">2024</span>
+                                <div>
+                                    <div class="exp-title">E-do · 팀장 / 기획</div>
+                                    <div class="exp-sub">학령기 아동 학습 도구 · 결선 진출</div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
-                    <div class="timeline-item card">
-                        <div class="timeline-date">2025</div>
-                        <h3 class="timeline-title">우리동네 과학클럽</h3>
-                        <p class="timeline-subtitle">운영 / 기획</p>
-                        <p class="timeline-text">시민들의 과학 문화 참여를 위한 <br>지역 과학문화 행사 기획 및 운영</p>
+
+                    <!-- 수상 -->
+                    <div class="awards-col">
+                        <div class="awards-list">
+
+                            <div class="award-item">
+                                <span class="award-name">TechnoBridge 해커톤</span>
+                                <span class="award-prize">대상</span>
+                            </div>
+                            <div class="award-item">
+                                <span class="award-name">2025 충남대 생성형 AI 챌린지</span>
+                                <span class="award-prize">금상</span>
+                            </div>
+                            <div class="award-item">
+                                <span class="award-name">제17회 소외된 이웃 창의설계 경진대회</span>
+                                <span class="award-prize">총장상</span>
+                            </div>
+                            <div class="award-item">
+                                <span class="award-name">2024 자기주도형 차차 프로그램</span>
+                                <span class="award-prize">대상</span>
+                            </div>
+                            <div class="award-item">
+                                <span class="award-name">2024 충남대 커스텀 GPT 프롬프톤</span>
+                                <span class="award-prize">은상</span>
+                            </div>
+                            <div class="award-item">
+                                <span class="award-name">창의작품경진대회 주니어 부문</span>
+                                <span class="award-prize">우수상</span>
+                            </div>
+                            <div class="award-item">
+                                <span class="award-name">K-HACKATHON 13</span>
+                                <span class="award-prize">장려상</span>
+                            </div>
+                            <div class="award-item">
+                                <span class="award-name">2025 COSS-SCOUT 첨단기술 창업 경진대회</span>
+                                <span class="award-prize">장려상</span>
+                            </div>
+                            <div class="award-item">
+                                <span class="award-name">K-해양 AI 챌린지 부산 2025</span>
+                                <span class="award-prize">장려상</span>
+                            </div>
+
+                        </div>
                     </div>
-                    <div class="timeline-item card">
-                        <div class="timeline-date">2025</div>
-                        <h3 class="timeline-title">FakeFilter 프로젝트</h3>
-                        <p class="timeline-subtitle">팀장 / 서비스 기획</p>
-                        <p class="timeline-text">AI 기반 편향 감지·설득 게임 기획<br>시나리오 설계 및 편향 탐지 리포트 시스템 기획<br>충남대학교 교내 대회에서 <strong>금상 수상 (3위)</strong></p>
-                    </div>
-                    <div class="timeline-item card">
-                        <div class="timeline-date">2024</div>
-                        <h3 class="timeline-title"><a href="edo.html" style="text-decoration: none; color: inherit;">E-do 프로젝트</a></h3>
-                        <p class="timeline-subtitle">팀장 / 서비스 기획</p>
-                        <p class="timeline-text">경계선 지능 아동 대상 맞춤형 학습 도구 기획<br>UX 플로우와 교육 보조 챗봇 설계<br>150팀 중 3팀안에 선정되어 <strong>결선 진출</strong> 경험</p>
-                    </div>
-                    <div class="timeline-item card">
-                        <div class="timeline-date">2024</div>
-                        <h3 class="timeline-title">ADHD 환자를 위한 스케쥴러</h3>
-                        <p class="timeline-subtitle">서비스 기획</p>
-                        <p class="timeline-text">교내 프롬프톤 대회에서 <strong>은상(2위) 수상</strong><br>ADHD의 특성을 고려한 스케줄러 제작</p>
-                    </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- Other Experience 섹션 -->
-        <section id="other-experience" class="section">
-            <div class="container">
-                <h2 class="section-title">Other Experience</h2>
-                <div class="other-experience-grid">
-                    <div class="card other-card">
-                        <h3>COSS 서포터즈 2기</h3>
-                        <p>충남대학교 데이터보안사업단 소속으로, COSS 활동을 홍보하는 소셜 미디어 콘텐츠를 기획하고 제작했습니다.</p>
-                    </div>
-                    <div class="card other-card">
-                        <h3>와우패스 와디터 3기</h3>
-                        <p>자격증 교육 플랫폼 '와우패스'의 서포터즈로 활동하며, 홍보 콘텐츠를 제작했습니다.</p>
-                    </div>
-                    <div class="card other-card">
-                        <h3>대전 AI 융합 취창업 박람회 서포터즈</h3>
-                        <p>충남대학교 바이오 AI 사업단 소속으로, 대전에서 열리는 취창업 박람회, 아이디어 챌린지 등을 홍보했습니다.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact 섹션 -->
+        <!-- Contact -->
         <section id="contact" class="section">
             <div class="container">
-                <h2 class="section-title">Contact</h2>
-                <div class="card contact-card">
-                    <p>아이디어, 협업, 기획 제안은 언제든 환영합니다!</p>
+                <div class="section-header">
+                    <span class="section-label">Contact</span>
+                </div>
+                <div class="contact-content">
+                    <p>궁금한 것, 같이 해보고 싶은 것, 혹은 그냥 하고 싶은 말이 있으면 편하게 연락 주세요.</p>
                     <div class="contact-links">
-                        <div class="contact-link-item">
-                            <a href="mailto:chunyj512@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
-                            <p>Email</p>
-                        </div>
-                        <div class="contact-link-item">
-                            <a href="https://github.com/chunyj512" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-                            <p>GitHub</p>
-                        </div>
-                        <div class="contact-link-item">
-                            <a href="https://www.instagram.com/512_extra_?igsh=MWJpcTh1ZHVoZ2Ixcg%3D%3D&utm_source=qr" target="blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-                            <p>Instagram</p>
-                        </div>
-                        <div class="contact-link-item">
-                            <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                            <p>LinkedIn</p>
-                        </div>
+                        <a href="mailto:chunyj512@gmail.com">Email — chunyj512@gmail.com</a>
+                        <a href="https://github.com/chunyj512" target="_blank" rel="noopener">GitHub — chunyj512</a>
+                        <a href="https://www.linkedin.com/in/chunyj512" target="_blank" rel="noopener">LinkedIn — in/chunyj512</a>
+                        <a href="https://www.instagram.com/512_extra_" target="_blank" rel="noopener">Instagram — @512_extra_</a>
                     </div>
                 </div>
             </div>
         </section>
+
     </main>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Yujeong Jeon. All Rights Reserved.</p>
+            <p>&copy; 2026 YuJeong Chun</p>
         </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
